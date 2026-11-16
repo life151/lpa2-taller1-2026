@@ -530,3 +530,39 @@ El estudiante debe actualizar su repositorio personal con:
 
 **Nota**: repo [solución al proyecto Muebles](https://github.com/axlcraft/lpa1-taller-poo).
 
+---
+
+## Instrucciones de Ejecución y Pruebas (Solución)
+
+### 1. Activar el entorno virtual
+```bash
+source .venv/bin/activate
+```
+
+### 2. Ejecutar la aplicación
+```bash
+PYTHONPATH=src python src/main.py
+```
+
+### 3. Ejecutar las pruebas y verificar cobertura
+```bash
+# Todas las pruebas con reporte de cobertura en terminal y HTML
+pytest --cov=src --cov-report=term-missing --cov-report=html
+
+# Solo pruebas unitarias
+pytest tests/unit/ -v
+
+# Solo pruebas de integración
+pytest -m integration -v
+```
+
+### 4. Ver reporte de cobertura HTML
+Abrir el archivo generado en `htmlcov/index.html` (desde WSL con `explorer.exe htmlcov/index.html`).
+
+### Resultados de Pruebas Obtenidos
+- **Pruebas ejecutadas:** 278 pasando (277 unitarias y 1 de integración)
+- **Cobertura total:** 97%
+  - `src/ui/menu.py`: 100%
+  - `src/main.py`: 99%
+  - `src/services/tienda.py`: 98%
+  - `src/models/`: entre 83% y 100%
